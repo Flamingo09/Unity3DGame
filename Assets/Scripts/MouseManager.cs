@@ -25,19 +25,24 @@ public class MouseManager : MonoBehaviour
         {
             bool door = false;
             bool item = false;
-            if(hit.collider.gameObject.tag == "Doorway")
+            if (hit.collider.gameObject.tag == "Doorway")
             {
                 Cursor.SetCursor(doorway, new Vector2(16, 16), CursorMode.Auto);
+                Debug.Log("Doorway was clicked");
+                Debug.Log(hit.collider.gameObject.tag);
                 door = true;
             } 
             else if(hit.collider.gameObject.tag == "Item")
             {
                 Cursor.SetCursor(combats, new Vector2(16, 16), CursorMode.Auto);
+                Debug.Log(hit.collider.gameObject.tag);
                 item = true;
             }
             else
             {
                 Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
+                Debug.Log("target");
+                Debug.Log(hit.collider.gameObject.tag);
             }
 
             if(Input.GetMouseButtonDown(0))

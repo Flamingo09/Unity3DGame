@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
 }
